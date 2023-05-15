@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name='description' content='A simple startpage, suited to my needs.' />
+    <meta name='author' content='Milen Hristov' />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>milen@firefox ~</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body onload="startTime()">
+
+    <script>
+    function startTime() {
+        var today = new Date();
+        var hr = today.getHours();
+        var min = today.getMinutes();
+        var sec = today.getSeconds();
+        // ap = (hr < 12) ? "<span>AM</span>" : "<span>PM</span>";
+        // hr = (hr == 0) ? 12 : hr;
+        // hr = (hr > 12) ? hr - 12 : hr;
+        hr = checkTime(hr);
+        min = checkTime(min);
+        sec = checkTime(sec);
+        document.getElementById("clock").innerHTML = hr + ":" + min + ":" + sec // + " " + ap;
+        
+        var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        var curWeekDay = days[today.getDay()];
+        var curDay = today.getDate();
+        var curMonth = months[today.getMonth()];
+        var curYear = today.getFullYear();
+        var date = curWeekDay+", "+curDay+" "+curMonth;
+        document.getElementById("date").innerHTML = date;
+        
+        var time = setTimeout(function(){ startTime() }, 500);
+    }
+    function checkTime(i) {
+        if (i < 10) {
+            i = "0" + i;
+        }
+        return i;
+    }
+    </script>
+
+    <div class="clockdate">
+        <div class="clockdate-wrapper">
+          <div id="date"></div>
+          <div id="clock"></div>
+        </div>
+    </div>
+
+    <br>
+    <div class="search">
+        <form class="ddg textField" action="https://duckduckgo.com/" method="get">
+            <input class="input_box" type="text" name="q" placeholder="" type="input" />
+            <label class="form__label" for="name">🔍   S e a r c h   w i t h   D u c k D u c k G o</label>
+        </form>
+    </div>
+    <br><br>
+    <div class="Social">
+        <br><br><br><br><br><br>
+        <div class="social media">
+            <h1><span class="c1"> social, media </span></h1>
+            <ul>
+                <li><a href='https://www.youtube.com/' class='button'>Youtube</a> <a href='https://fr-fr.facebook.com/' class='button'>Facebook</a> <a href='https://www.instagram.com/' class='button'>Instagram</a></li>
+                <br>
+                <li><a href='https://twitter.com/i/flow/login' class='button'>Twitter</a> <a href='https://www.tumblr.com/' class='button'>Tumblr</a> <a href='https://www.pinterest.fr/' class='button'>SU Judge</a></li>
+                <br>
+                <li><a href='https://viadeo.zendesk.com/hc/fr' class='button'>Viadeo</a> <a href='https://www.tiktok.com/fr' class='button'>TikTok</a> <a href='https://www.reddit.com/' class='button'>Reddit</a></li>
+                <br>
+                <li><a href='https://accounts.snapchat.com/accounts/signup?client_id=snapkit' class='button'>Snapchat</a> <a href='https://open.spotify.com/' class='button'>Spotify</a> <a href='https://telegram.org/' class='button'>Telegram</a></li>
+                <br>
+                <li><a href='https://www.reddit.com/' class='button'>Reddit</a> <a href='https://www.dailymotion.com/fr' class='button'>Dailymotion</a> <a href='https://www.viber.com/fr/' class='button'>Viber</a></li>
+                <br>
+                <li><a href='https://www.whatsapp.com/' class='button'>Whatsapp</a> <a href='https://www.messenger.com/' class='button'>Messenger</a></li>
+                <br>
+            </ul>
+        </div>
+
+        <div class="Games">
+            <h1><span class="c2"> games </span></h1>
+            <ul>
+                <li><a href='https://www.softgenius.co/app/grand-theft-auto-v-the-manual#google_vignette' class='button'>GTA V</a> <a href='https://supermario-game.com/fr' class='button'>Super Mario</a> <a href='https://valorant.fr.softonic.com/?utm_source=Bing&utm_medium=paid&utm_campaign=BING_FR_DSA_1&msclkid=1a065bcea9f0105d80ae3f91d87b100d&ex=CS-1298.0' class='button'>Valorant</a></li>
+                <br>
+                <li><a href='https://call-of-duty-warzone.fr.softonic.com/avis-tous?utm_source=Bing&utm_medium=paid&utm_campaign=BING_FR_DSA_1&msclkid=65eeed67533612cac058893822f910a6&ex=CS-1298.0' class='button'>Warzone</a> <a href='https://www.softgenius.co/app/fortnite' class='button'>Fortnite</a> <a href='https://www.softgenius.co/search?query=roblox' class='button'>Roblox</a></li>
+                <br>
+                <li><a href='https://www.softgenius.co/search?query=sims' class='button'>Sims</a> <a href='https://www.softgenius.co/search?query=hitman' class='button'>Hitman</a> <a href='https://www.softgenius.co/search?query=clash+royal' class='button'>Clash Royal</a></li>
+                <br>
+                <li><a href='https://www.jeuxvideo.com/jeux/jeu-1254062/' class='button'>UFC4</a> <a href='https://www.wwegames.online/fr/jeux-de-wwe.html' class='button'>WWE</a> <a href='https://www.friv.com/' class='button'>Friv</a></li>
+                <br>
+                <li><a href='https://www.softgenius.co/app/pubg-mobile' class='button'>Pubg</a></li>
+		 <br>
+            </ul>
+            
+        </div>
+
+        <div class="Travel">
+            <h1><span class="c3"> destination, hollydays </span></h1>
+            <ul>
+                <li><a href='https://www.opodo.fr/vol/compagnie-aerienne/JL/japan-airlines/?mktportal=bing&utm_id=bi_cmp-367758983_adg-1288627983771034_ad-80539336193732_kwd-80539573617998:loc-1283_dev-c_ext-_locphy-126003_mtype-b_ntw-o&utm_term=80539573617998&utm_content=1288627983771034&msclkid=3caa0ebfd01b157b9a8b6ae0a5737a7f&utm_source=bing&utm_medium=cpc&utm_campaign=B-O-FR-FL-AIRLINE%20OTHER-SEA-PC-L#/' class='button'>Japan</a> <a href='https://www.opodo.fr/vol/compagnie-aerienne/AH/air-algerie/?mktportal=bing&utm_id=bi_cmp-367758983_adg-1285329448877495_ad-80333177756375_kwd-80333414098704:loc-1283_dev-c_ext-_locphy-126003_mtype-b_ntw-o&utm_term=80333414098704&utm_content=1285329448877495&msclkid=25ec0a2d6b9416e1a2496e721e51d2ca&utm_source=bing&utm_medium=cpc&utm_campaign=B-O-FR-FL-AIRLINE%20OTHER-SEA-PC-L#/' class='button'>Algeria</a> <a href='https://www.routard.com/guide/code_dest/hawaii.htm' class='button'>Hawaii</a></li>
+                <br>
+                <li><a href='https://www.airtransat.com/fr-FR/voyage-canada/montreal?msclkid=9f36610137301b3b106f055e41c399b1&utm_source=bing&utm_medium=cpc&utm_campaign=SEM_google_france_fr_ts_flt_awo_generic_p2_can_france_canada&utm_term=billet%20avion%20montreal&utm_content=p2_Montreal_Flight&gclid=9f36610137301b3b106f055e41c399b1&gclsrc=3p.ds&search=flight&flightType=RT&gateway=AIRPORT_CDG&pax=1-0-0-0' class='button'>Canada</a> <a href='https://www.vueling.com/fr/routes/vols-moins-chers-au-depart-de-lyon-et-a-destination-de-barcelone?ef_id=:G:s&&cadw=ES&mkwid=s_dc|pcrid||pkw|FR_ROUTE_BCN-WHEREVER|pmt|b|slid||pgrid|1214960838962887|ptaid|dat-2327734835643314:loc-1283&&utm_medium=cpc&msclkid=f3645e1597b61d156bc33a4ae0e4a9dd&utm_source=bing&utm_campaign=nonbranded+search_bing_alwon_eu_fr_all_p_all_ruta+dsabcn_serp_txt_all&utm_term=FR_ROUTE_BCN-WHEREVER&utm_content=0_DSA_AG_All&gclid=f3645e1597b61d156bc33a4ae0e4a9dd&gclsrc=3p.ds' class='button'>Spain</a> <a href='https://www.kayak.fr/vols/France-FR0/Russie-RU0' class='button'>Russia</a></li>
+                <br>
+                <li><a href='https://www.frenchbee.com/fr?t=c&creative=71537200418302&msclkid=01df519e1c2e16aa8b2335c164308bff&utm_source=bing&utm_medium=cpc&utm_campaign=LAX-ORY__France__Sch--tROAS&utm_term=vols%20los%20Angeles&utm_content=ORY-LAX_vol__LM' class='button'>Los Angeles</a> <a href='https://www.qatarairways.com/fr-fr/homepage.html?CID=SXFR23457130M&account=Bing-Europe-FR-FR&campaign=_FR-D-XXX-DXB-FR_phrase&adgroup=Flights&term=billet+vers+duba%C3%AF&&msclkid=0ff46564714d1a92bb29013b093d7472&gclid=0ff46564714d1a92bb29013b093d7472&gclsrc=3p.ds' class='button'>Dubai</a> <a href='https://www.edreams.fr/offres/vol/compagnie-aerienne/RJ/royal-jordanian/?mktportal=bing&utm_id=bi_cmp-391105179_adg-1203965837380653_ad-75247959930775_dat-2327047640848650:loc-1283_dev-c_ext-_locphy-126003_mtype-b_ntw-o&utm_term=2327047640848650&utm_content=1203965837380653&msclkid=da699003d13912d46cd0f45ca99e9a4b&utm_source=bing&utm_medium=cpc&utm_campaign=B-E-FR-FL-AIRLINE%20DSA-SEA-PC-L#/' class='button'>Jordania</a></li>
+                <br>
+                <li><a href='https://www.edreams.fr/offres/vol/compagnie-aerienne/TK/turkish-airlines/?mktportal=bing&utm_id=bi_cmp-391105815_adg-1167682531842284_ad-72980393397114_kwd-72980869348108:loc-1283_dev-c_ext-_locphy-126003_mtype-b_ntw-o&utm_term=72980869348108&utm_content=1167682531842284&msclkid=077b1342cedb1acc8991771db7c5c6d8&utm_source=bing&utm_medium=cpc&utm_campaign=B-E-FR-FL-AIRLINE%20OTHER-SEA-PC-L#/' class='button'>Turkey</a></li>
+                 <br>
+		</ul>
+        </div>
+    </div>
+</body>
+</html>

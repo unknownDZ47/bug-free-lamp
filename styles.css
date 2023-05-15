@@ -1,0 +1,207 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(maxresdefault.jpg);
+    background-size: cover;
+    background-position-x: center;
+    background-attachment: fixed;  
+    font-family:'Montserrat', sans-serif;
+    text-align: center; 
+}
+
+#clock, #date {
+    font-size: 48px;
+    font-weight: bolder;
+    text-align: center;
+    font-family:'Roboto Condensed', sans-serif;
+    color: rgb(80, 48, 67);
+}
+
+.clockdate {
+    margin-top: 50px;
+}
+
+.search {
+    position: relative;
+    padding: 20px 0 0;
+    margin-top: 15px;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 500px;
+  }
+
+.input_box {
+    font-family: inherit;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #6a7999;
+    outline: 0;
+    text-align: center;
+    font-size: 22px;
+    color: #8fbcbb;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+}
+
+.input_box::placeholder {
+    color: transparent;
+}
+
+.input_box:placeholder-shown ~ .form__label {
+    font-size: 20px;
+    cursor: text;
+    top: 20px;
+}
+
+.form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 20px;
+    color: #8fbcbb;
+    pointer-events: none;
+}
+
+.input_box:focus {
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, #8fbcbb, #88c0d0, #81a1c1, #5e81ac);
+    border-image-slice: 1;
+}
+
+.input_box:focus ~ .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 20px;
+    color: #b48ead;
+    font-weight: 700;
+}
+
+/* reset input */
+.input_box:required, .form__field:invalid {
+    box-shadow: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    text-align: left;
+}
+
+.Social, .Games, .Travel {
+    height: 400px;
+    width: 470px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 1.5%;
+    resize: horizontal;
+}
+
+/* ICI POUR CHANGER COULEUR DE FOND DES BOUTONS, COULEUR DU TEXTE DES BOUTONS, */
+
+.button {
+    font-size: 16px;
+    font-family:'Anton', sans-serif;
+    /* letter-spacing: 2px; */
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+    padding: 0.3em;
+    width: 8.5em;
+    border: 3px solid #b48ead; 
+    border-radius: 2px;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+    color: #680809;
+    background-color: black;
+    text-decoration: none;
+    transition: 0.3s ease all;
+    z-index: 1;
+}
+  
+.button:before {
+    transition: 0.5s all ease;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    opacity: 0;
+    content: '';
+    background-color: #b48ead;
+    z-index: -1;
+}
+   
+.button:hover, button:focus {
+    color: #2e3440;
+}
+   
+.button:hover:before, button:focus:before {
+    transition: 0.5s all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;
+}
+   
+.button:active {
+    transform: scale(0.9);
+}
+
+/* ICI POUR CHANGER LES COULEURS QUAND ON PASSE LA SOURIS SUR UN DES BOUTONS (PAR CATEGORIE)*/ 
+
+.Social .button {
+    border: 3px solid #81a1c1;
+}
+
+.Social .button::before {
+    background-color: #81a1c1;
+}
+
+.Games .button {
+    border: 3px solid #d08770;
+}
+
+.Games .button::before {
+    background-color: #d08770;
+}
+
+.Travel .button {
+    border: 3px solid blue;
+}
+
+.Travel .button::before {
+    background-color: green;
+}
+
+h1 {
+    font-size: 16pt;
+    text-align: center;
+    margin-top: 3px;
+    color: rgb(229, 233, 240)
+}
+
+/* ICI POUR CHANGER LES COULEURS DES TITRES DES CATEGORIES (c1 = social, c2 = games, c3 = travel)*/ 
+
+.c1 {
+    color: #a23070;
+    background-color: #130809;
+}
+
+.c2 {
+    color: #7b304d;
+    background-color: #130809;
+}
+
+.c3 {
+    color: #a3304a;
+    background-color: #130809;
+}
